@@ -1,5 +1,5 @@
 >>> Usefull site <<<
-https://www.server-world.info
+https://www.server-world.info/en/
 
 >>> For G510 <<<
 lspci -vvnn | grep -A 9 Network
