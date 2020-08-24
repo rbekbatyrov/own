@@ -1,3 +1,5 @@
-sudo apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst
 sudo apt-get -y install qemu-kvm libvirt-daemon-system libvirt-daemon virtinst bridge-utils libosinfo-bin libguestfs-tools virt-top
 //for desktop: apt -y install virt-manager qemu-system
+
+//Create virtual machine
+virt-install --name=Test --disk path=/var/lib/libvirt/images/test_disk.qcow2,size=10 --graphics spice --vcpu=1 --ram=256 --cdrom Downloads/debian-10.5.0-amd64-netinst.iso --network bridge=virbr0
