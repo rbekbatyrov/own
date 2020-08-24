@@ -1,6 +1,7 @@
 >>> Usefull site <<<
 https://www.server-world.info/en/
 
+UBUNTU 20.04
 >>> For G510 <<<
 lspci -vvnn | grep -A 9 Network
 sudo apt-get install bcmwl-kernel-source
