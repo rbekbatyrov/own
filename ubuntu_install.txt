@@ -1,0 +1,11 @@
+>>> Usefull site <<<
+https://www.server-world.info
+
+>>> For G510 <<<
+lspci -vvnn | grep -A 9 Network
+sudo apt-get install bcmwl-kernel-source
+sudo reboot
+
+>>> ubuntu config <<< 
+sudo apt-get install vlc aptitude tmux git vim fish
+ubuntu-drivers autoinstall
