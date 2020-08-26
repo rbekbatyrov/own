@@ -1,1 +1,32 @@
 #1
+sudo apt-get install virtualbox vagrant
+---
+$ vagrant init
+$ cat Vagrantfile
+$ vagrant up
+$ virtualbox
+$ vagrant ssh
+$ vagrant halt
+$ vagrant suspend
+$ vagrant destroy
+---
+vi Vagrantfile
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+$name = "vm"
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+
+  config.vm.define $name do |i|
+    i.vm.hostname = $name
+    i.vm.network "private_network", ip: "192.168.10.1"
+  end
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "512"
+    vb.name = $name
+    vb.cpus = 1
+  end
+
+end
