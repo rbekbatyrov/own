@@ -1,0 +1,2 @@
+$ sudo apt-get install ansible -y
+$ sudo aptitude install ansible -y
