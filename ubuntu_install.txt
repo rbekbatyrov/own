@@ -8,5 +8,6 @@ sudo apt-get install bcmwl-kernel-source
 sudo reboot
 
 >>> ubuntu config <<< 
-sudo apt-get install vlc aptitude tmux git vim fish
-ubuntu-drivers autoinstall
+$ sudo apt-get update && sudo apt-get upgrade
+$ sudo apt-get install vlc aptitude tmux git vim fish
+$ ubuntu-drivers autoinstall
