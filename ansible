@@ -42,3 +42,6 @@ $ vi /home/ruslan/Desktop/temp/ansible/example.yml
 
 $ ansible-playbook -i /home/ruslan/Desktop/temp/ansible/inventory /home/ruslan/Desktop/temp/ansible/example.yml
 ---ready
+
+$ ansible -i /home/ruslan/Desktop/temp/ansible/inventory -m shell -a 'id' hosts
+---ready
