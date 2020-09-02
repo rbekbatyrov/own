@@ -1,3 +1,44 @@
 $ sudo apt-get update && sudo apt-get upgrade
 $ sudo apt-get install ansible -y
 $ sudo aptitude install ansible -y
+
+$ cp /etc/ansible/ansible.cfg /etc/ansible/ansible.cfg_back
+$ vi /etc/ansible/ansible.cfg
+>>> BOF <<<
+[defaults]
+inverntory            = /home/ruslan/Desktop/temp/ansible/inventory
+remote_user           = vagrant
+host_key_checking		  = False
+forks				          = 5
+transport			        = smart
+retry_files_enabled		= False
+remote_port			      = 2222
+
+[diff]
+always				        = true
+context				        = 3
+>>> EOF <<<
+
+$ vi /home/ruslan/Desktop/temp/ansible/inventory
+>>> BOF <<<
+[hosts]
+127.0.0.1
+
+[hosts:vars]
+ansible_ssh_private_key_file=/home/ruslan/Desktop/temp/vargant/.vagrant/machines/vm/virtualbox/private_key
+>>> EOF <<<
+
+$ vi /home/ruslan/Desktop/temp/ansible/example.yml
+>>> BOF <<<
+---
+- hosts: hosts
+  become: yes
+
+  tasks:
+
+  - name: Install please nginx
+    yum: name=nginx state=installed
+>>> EOF <<<
+
+$ ansible-playbook -i /home/ruslan/Desktop/temp/ansible/inventory /home/ruslan/Desktop/temp/ansible/example.yml
+---ready
