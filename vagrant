@@ -6,6 +6,7 @@ $ cat Vagrantfile
 $ vagrant up
 $ virtualbox
 $ vagrant ssh
+$ vagrant ssh-config
 $ vagrant halt
 $ vagrant suspend
 $ vagrant destroy
