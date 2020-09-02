@@ -1,0 +1,6 @@
+>>> tar
+>>> docker
+>>> kubectl
+
+>>> ssh
+$ ssh -l vagrant 127.0.0.1 -p 2222 -i /home/ruslan/Desktop/temp/vargant/.vagrant/machines/vm/virtualbox/private_key
