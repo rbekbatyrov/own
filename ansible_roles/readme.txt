@@ -1,5 +1,6 @@
 //script "ansible_roles.sh" make tree of directories for ansible.
 //just copy the bash-file to the directory you want and make "bash ansible_roles.sh" after that you can see below
+//please rename "[testrole]" directory to name you want, for example "nginx" or "db"
 .
 ├── ansible_roles.sh
 ├── inventories
