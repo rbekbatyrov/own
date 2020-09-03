@@ -35,6 +35,8 @@ $ vi /home/ruslan/Desktop/temp/ansible/inventory
 ansible_ssh_private_key_file=/home/ruslan/Desktop/temp/vargant/.vagrant/machines/vm/virtualbox/private_key
 >>> EOF <<<
 
+$ ansible -i /home/ruslan/Desktop/temp/ansible/inventory -m ping hosts
+
 $ mkdir /home/ruslan/Desktop/temp/ansible/template && touch /home/ruslan/Desktop/temp/ansible/template/nginx.conf
 $ vi /home/ruslan/Desktop/temp/ansible/example.yml
 >>> BOF <<<
@@ -62,8 +64,21 @@ $ vi /home/ruslan/Desktop/temp/ansible/example.yml
       service: name=nginx state=reloaded
 >>> EOF <<<
 
-$ ansible-playbook -i /home/ruslan/Desktop/temp/ansible/inventory /home/ruslan/Desktop/temp/ansible/example.yml
----ready
-
+//Send "id" command to run for group "hosts"
 $ ansible -i /home/ruslan/Desktop/temp/ansible/inventory -m shell -a 'id' hosts
----ready
+//List all facts about group "hosts"
+$ ansible -i /home/ruslan/Desktop/temp/ansible/inventory -m setup hosts
+//Run the playbook
+$ ansible-playbook -i /home/ruslan/Desktop/temp/ansible/inventory /home/ruslan/Desktop/temp/ansible/example.yml
+//List all hosts and vars
+$ ansible-inventory -i /home/ruslan/Desktop/temp/ansible/inventory --graph --vars
+//Check the playbook, without running
+$ ansible-playbook -i /home/ruslan/Desktop/temp/ansible/inventory /home/ruslan/Desktop/temp/ansible/example.yml --check
+//Run the playbook step by step, entering "yes"
+$ ansible-playbook -i /home/ruslan/Desktop/temp/ansible/inventory /home/ruslan/Desktop/temp/ansible/example.yml --step
+//List all tasks in playbook
+$ ansible-playbook example.yml --list-tasks
+//List all tags in playbook
+$ ansible-playbook example.yml --list-tags
+//Use task, whos tag is 'prepare_host'
+$ ansible-playbook -i /home/ruslan/Desktop/temp/ansible/inventory /home/ruslan/Desktop/temp/ansible/example.yml -t 'prepare_host'
