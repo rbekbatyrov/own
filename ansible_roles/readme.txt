@@ -1,29 +1,31 @@
-//script "ansible_roles.sh" make tree of directories for ansible.
-//just copy the bash-file to the directory you want and make "bash ansible_roles.sh" after that you can see below
-//please rename "[testrole]" directory to name you want, for example "nginx" or "db"
+>>> ansible_roles.sh <<<
+//script "ansible_roles.sh" make tree of directories and create files for ansible.
+//Files are: /etc/ansible/ansible.cfg, ../inventories/test_inventory, ../playbooks/roles/$dir_name/tasks/main.yml
+//just copy the bash-file to the directory you want and make "bash ansible_roles.sh [role_name]"
+//for example: bash ansible_roles.sh nginx
+//after that you can see below
 .
 ├── ansible_roles.sh
 ├── inventories
-│   ├── prod
-│   ├── stagging
-│   └── test
-├── playbooks
-└── roles
-    └── [testrole]
-        ├── default
-        │   └── main.yml
-        ├── files
-        ├── handlers
-        │   └── main.yml
-        ├── meta
-        │   └── main.yml
-        ├── tasks
-        │   └── main.yml
-        ├── templates
-        └── vars
-            └── main.yml
+│   └── test_inventory
+└── playbooks
+    ├── nginx.yml
+    └── roles
+        └── nginx
+            ├── default
+            ├── files
+            ├── handlers
+            ├── meta
+            ├── tasks
+            │   └── main.yml
+            ├── templates
+            └── vars
 
->>> ansible with roles and vars
+//you can make "$ ansible-playbook -i inventories/test_inventory playbooks/nginx.yml"
+//that's all
+
+
+>>> ansible with roles and vars <<<
 $ vi /home/ruslan/Desktop/temp/ansible_roles/nginx.yml
 >>> BOF <<<
 ---
