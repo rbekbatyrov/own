@@ -1,3 +1,27 @@
+//script "ansible_roles.sh" make tree of directories for ansible.
+//just copy the bash-file to the directory you want and make "bash ansible_roles.sh" after that you can see below
+.
+├── ansible_roles.sh
+├── inventories
+│   ├── prod
+│   ├── stagging
+│   └── test
+├── playbooks
+└── roles
+    └── [testrole]
+        ├── default
+        │   └── main.yml
+        ├── files
+        ├── handlers
+        │   └── main.yml
+        ├── meta
+        │   └── main.yml
+        ├── tasks
+        │   └── main.yml
+        ├── templates
+        └── vars
+            └── main.yml
+
 >>> ansible with roles and vars
 $ vi /home/ruslan/Desktop/temp/ansible_roles/nginx.yml
 >>> BOF <<<
