@@ -1,13 +1,12 @@
 ---
-- name: Install epel Please
-  yum: name=epel-release state=installed
+- name: Install yum-utils
+  yum: name=yum-utils state=present
+
+- name: Upload nginx repository
+  template: src=nginx.repo.j2 dest=/etc/yum.repos.d/nginx.repo owner=root group=root mode=644
 
 - name: Install nginx Please
   yum: name=nginx state=installed
 
 - name: Start nginx Please
   service: name=nginx state=started
-
-- name: Upload new config file Please
-  template: src=HelloWorld.txt dest=/etc/nginx/nginx.conf owner=root group=root mode=777
-  notify: reload nginx
