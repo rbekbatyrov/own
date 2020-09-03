@@ -1,6 +1,13 @@
+//For Debian and Ubuntu
 $ sudo apt-get update && sudo apt-get upgrade
 $ sudo apt-get install ansible -y
+// OR you can use
+$ sudo aptitude update && sudo apt-get upgrade
 $ sudo aptitude install ansible -y
+//For RedHat OS
+$ sudo yum install ansible -y
+//You can also use "pip", but the file etc/ansible/ansible.cfg will not be created
+$ sudo pip install ansible
 
 $ cp /etc/ansible/ansible.cfg /etc/ansible/ansible.cfg_back
 $ vi /etc/ansible/ansible.cfg
