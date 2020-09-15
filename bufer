@@ -1,0 +1,4 @@
+//find out if server needs reboot in CentOS
+$ yum whatprovides needs-restarting
+$ needs-restarting
+$ needs-restarting -r
