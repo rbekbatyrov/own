@@ -21,7 +21,7 @@ gpgcheck=1
 $ sudo dnf install MariaDB-server
 $ sudo systemctl start mariadb
 
-# Keepalived_2.1.5 instalation
+# Keepalived_2.1.5 instalation (on primary and secondary both)
 $ sudo vi /etc/sysctl.conf
 >net.ipv4.ip_nonlocal_bind = 1
 $ sudo sysctl -p
