@@ -20,6 +20,7 @@ Documentation how to configure Ubuntu Desktop
 >>> usefull_commands <<<
 bash commands which I use every day
 - tar
+- gizp
 - docker
 - kubectl
 - ssh
