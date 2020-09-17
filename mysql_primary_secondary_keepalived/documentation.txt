@@ -1,11 +1,11 @@
 #Here is some documentory to install mysql (primary-secondary) with keepalived failover deamon on centos/debian.
 
 #Instalation mysql on Debain_10/Ubuntu (on primary and secondary both)
-$ sudo apt-get install software-properties-common dirmngr \
-$ sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc' \
-$ sudo add-apt-repository 'deb [arch=amd64] http://mirror.mephi.ru/mariadb/repo/10.5/debian buster main' \
-$ sudo apt-get update \
-$ sudo apt-get install mariadb-server \
+$ sudo apt-get install software-properties-common dirmngr
+$ sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+$ sudo add-apt-repository 'deb [arch=amd64] http://mirror.mephi.ru/mariadb/repo/10.5/debian buster main'
+$ sudo apt-get update
+$ sudo apt-get install mariadb-server
 
 #Instalation mysql on CentOS_10.5 (on primary and secondary both)
 $ vi /etc/yum.repos.d/MariaDB.repo
@@ -18,6 +18,19 @@ module_hotfixes=1
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 >EOF
-
 $ sudo dnf install MariaDB-server
 $ sudo systemctl start mariadb
+
+# Keepalived_2.1.5 instalation
+$ sudo vi /etc/sysctl.conf
+>net.ipv4.ip_nonlocal_bind = 1
+$ sudo sysctl -p
+# Look https://keepalived.org/download.html
+$ wget https://keepalived.org/software/keepalived-2.1.5.tar.gz
+$ tar -xvzf keepalived-2.1.5.tar.gz
+$ cd keepalived-2.1.5
+$ sudo ./configure
+$ sudo make
+$ sudo make install
+
+
