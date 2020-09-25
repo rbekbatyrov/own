@@ -6,13 +6,13 @@ $ sudo systemctl status php73-php-fpm
 $ sudo systemctl enable php73-php-fpm
 $ sudo systemctl start php73-php-fpm
 - Делаю бэкап, опять же на всякий
-$ sudo cp /srv/www/donate.vlast.kz/conf/php-fpm.conf php-fpm.conf_back
+$ sudo cp /var/www/site.kz/conf/php-fpm.conf php-fpm.conf_back
 - Удаляю символьную ссылку, который работает на php7.0.33 и перечитываю конфиги и проверяю статус службы
-$ sudo rm -f /etc/php-fpm.d/donate.vlast.kz.conf
+$ sudo rm -f /etc/php-fpm.d/site.kz.conf
 $ sudo systemctl reload php-fpm
 $ sudo systemctl status php-fpm
 - Создаю символьную ссылку, которая работает на php 7.3 и перечитываю конфиги
-$ sudo ln -s /srv/www/donate.vlast.kz/conf/php-fpm.conf /etc/opt/remi/php73/php-fpm.d/donate.vlast.kz.conf
+$ sudo ln -s /var/www/site.kz/conf/php-fpm.conf /etc/opt/remi/php73/php-fpm.d/site.kz.conf
 $ sudo systemctl reload php73-php-fpm
 - сравнить утановленные модули
 $ sudo php -m
