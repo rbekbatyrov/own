@@ -1,0 +1,21 @@
+>>> Часть сайтов работают на php7.0 и еще нужно поднять сайт на php7.3 <<<
+- устанавливаю нужные пакеты
+$ sudo yum install php73.x86_64 php73-php-fpm
+- На всякий проверяю статусы, если что, сделать их "enable"
+$ sudo systemctl status php73-php-fpm
+$ sudo systemctl enable php73-php-fpm
+$ sudo systemctl start php73-php-fpm
+- Делаю бэкап, опять же на всякий
+$ sudo cp /srv/www/donate.vlast.kz/conf/php-fpm.conf php-fpm.conf_back
+- Удаляю символьную ссылку, который работает на php7.0.33 и перечитываю конфиги и проверяю статус службы
+$ sudo rm -f /etc/php-fpm.d/donate.vlast.kz.conf
+$ sudo systemctl reload php-fpm
+$ sudo systemctl status php-fpm
+- Создаю символьную ссылку, которая работает на php 7.3 и перечитываю конфиги
+$ sudo ln -s /srv/www/donate.vlast.kz/conf/php-fpm.conf /etc/opt/remi/php73/php-fpm.d/donate.vlast.kz.conf
+$ sudo systemctl reload php73-php-fpm
+- сравнить утановленные модули
+$ sudo php -m
+$ sudo php73 -m
+- Устанавливаю нужные
+$ sudo yum install php73-php-bcmath.x86_64 php73-php-mbstring.x86_64 php73-php-xml.x86_64 php73-php-gd.x86_64 php73-php-gmp.x86_64 php73-php-pecl-igbinary.x86_64 php73-php-pecl-imagick.x86_64 php73-php-intl.x86_64 php73-php-pecl-mcrypt.x86_64 php73-php-pecl-memcache.x86_64 php73-php-pecl-memcached.x86_64 php73-php-pecl-msgpack.x86_64 php73-php-mysqlnd.x86_64 php73-php-pecl-zip.x86_64 php73-php-opcache.x86_64 php73-php-tidy.x86_64 php73-php-soap.x86_64 php73-php-process.x86_64 php73-php-recode.x86_64 -y
