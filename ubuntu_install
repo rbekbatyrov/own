@@ -11,3 +11,4 @@ sudo reboot
 $ sudo apt-get update && sudo apt-get upgrade
 $ sudo apt-get install vlc aptitude tmux git vim fish thunderbird keepass2 telegram-desktop
 $ ubuntu-drivers autoinstall
+$ sudo snap install notepad-plus-plus
