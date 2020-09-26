@@ -11,4 +11,8 @@ sudo reboot
 $ sudo apt-get update && sudo apt-get upgrade
 $ sudo apt-get install vlc aptitude tmux git vim fish thunderbird keepass2 telegram-desktop htop
 $ ubuntu-drivers autoinstall
+
+>>> install notepad++ with snap and wine <<<
 $ sudo snap install notepad-plus-plus
+$ sudo snap install wine-platform-5-stable
+$ sudo snap connect notepad-plus-plus:wine-5-stable wine-platform-5-stable
