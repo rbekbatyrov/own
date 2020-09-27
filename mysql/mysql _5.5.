@@ -1,0 +1,10 @@
+
+
+
+
+
+$ mysql -V
+->mysql  Ver 14.14 Distrib 5.5.62, for Linux (x86_64) using readline 5.1
+
+
+http://repo.mysql.com/yum/mysql-5.5-community/el/6/x86_64/
