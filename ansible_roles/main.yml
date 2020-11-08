@@ -3,4 +3,4 @@
   become: yes
   roles:
     - { role: nginx, tags: nginx }
-    - { role: filbeat, tags: filebeat }
+    - { role: filebeat, tags: filebeat }
