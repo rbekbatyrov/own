@@ -46,3 +46,5 @@ user {{ nginx_user }};
 worker_processes {{ nginx_worker_processes }};
 ...
 >>> EOF <<<
+
+$ ansible-playbook -u user -t filebeat main.yml -K -i inventory
