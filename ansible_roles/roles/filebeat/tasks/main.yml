@@ -1,0 +1,25 @@
+---
+- name: Download and install the public signing key
+  rpm_key:
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+- name: Create repository file
+  copy:
+    src: elastic.repo
+    dest: /etc/yum.repos.d/elastic.repo
+
+- name: Install filebeat
+  yum:
+    name: filebeat
+    update_cache: yes
+
+- name: Copy configuration files
+  copy:
+    src: filebeat.yml
+    dest: /etc/filebeat/filebeat.yml
+
+- name: Start filebeat service
+  service: name=filebeat state=started
+
+- name: Enable filebeat service
+  service: name=filebeat enabled=yes
