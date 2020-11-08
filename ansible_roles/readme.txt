@@ -47,4 +47,8 @@ worker_processes {{ nginx_worker_processes }};
 ...
 >>> EOF <<<
 
+>>> Usefull commands <<<
+$ ssh user@192.168.10.2
+$ sudo usermod -aG wheel user
+$ ssh-copy-id user@192.168.10.2
 $ ansible-playbook -u user -t filebeat main.yml -K -i inventory
