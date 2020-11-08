@@ -51,8 +51,8 @@ worker_processes {{ nginx_worker_processes }};
 $ ssh user@192.168.10.2
 $ sudo usermod -aG wheel user
 $ ssh-copy-id user@192.168.10.2
-$ ansible-playbook -u user main.yml -K -i inventory                 //make all roles
-$ ansible-playbook -u user -t nginx main.yml -K -i inventory     //make nginx role
-$ ansible-playbook -u user -t filebeat main.yml -K -i inventory     //make filebeat role
+$ ansible-playbook -u user main.yaml -K -i inventory                 //make all roles
+$ ansible-playbook -u user -t nginx main.yaml -K -i inventory     //make nginx role
+$ ansible-playbook -u user -t filebeat main.yaml -K -i inventory     //make filebeat role
 
 
