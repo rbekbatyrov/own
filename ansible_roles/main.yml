@@ -2,5 +2,5 @@
 - hosts: hosts
   become: yes
   roles:
-    - nginx
-    - filebeat
+    - { role: nginx, tags: nginx }
+    - { role: filbeat, tags: filebeat }
