@@ -13,10 +13,31 @@
     name: filebeat
     update_cache: yes
 
-- name: Copy configuration files
+- name: Copy configuration file
   copy:
     src: filebeat.yml
     dest: /etc/filebeat/filebeat.yml
+
+- name: Copy certificate
+  copy:
+    src: logstash-remote.crt
+    dest: /etc/filebeat/logstash-remote.crt
+
+- name: Enable module system
+  shell: filebeat modules enable system
+
+- name: Enable module nginx
+  shell: filebeat modules enable nginx
+  
+- name: Copy system module file
+  copy:
+    src: system.yml
+    dest: /etc/filebeat/modules.d/system.yml
+
+- name: Copy nginx module file
+  copy:
+    src: nginx.yml
+    dest: /etc/filebeat/modules.d/nginx.yml
 
 - name: Start filebeat service
   service: name=filebeat state=started
