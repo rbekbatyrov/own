@@ -1,5 +1,5 @@
 >>> tar (zip, watch, unzip)
-tar -cfvz archive.tar.gz [folder/file]
+tar cfvz archive.tar.gz [folder/file]
 tar -tf archive.tar.gz
 tar -xvzf archive.tar.gz -C /tmp
 
