@@ -1,0 +1,25 @@
+#Show all session
+tmux ls
+
+#Create new session
+tmux new -s new_session
+
+#Or type just "tmux" and "0" session will be created
+
+#Deattach tmux session
+<Ctrl + b> than enter "d"
+
+#Attach the session
+tmux ls
+tmux attach -t new_session
+tmux attach
+
+#Choose session
+<Ctrl + b> than enter "s"
+
+#Kill the session
+tmux ls
+tmux kill-session -t new_session
+
+#Kill all sessions
+tmux kill-server
