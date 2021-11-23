@@ -1,0 +1,21 @@
+#Comment few lines
+Ctrl + /
+
+#Add info in the begining of each line
+Ctrl + a
+Ctrl + Shift + L
+
+#Find text and replace
+Ctrl + h
+
+Or
+
+Ctrl + f
+>Click on "Find all"
+
+#Compile code
+Ctrl + b
+
+#Install package
+Ctrl + Shift + p
+>type "Install package"
