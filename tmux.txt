@@ -34,3 +34,8 @@ tmux kill-session -t new_session
 
 #Kill all sessions
 tmux kill-server
+
+#------------------------------------------
+#tmux config file
+#location ~/.tmux.conf
+set -g mouse on
