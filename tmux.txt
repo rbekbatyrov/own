@@ -2,9 +2,9 @@
 tmux ls
 
 #Create new session
-tmux new -s new_session
+tmux new -s [new_session]
 
-#Or type just "tmux" and "0" session will be created
+*Or type just "tmux"
 
 #Deattach tmux session
 <Ctrl + b> than enter "d"
@@ -14,9 +14,20 @@ tmux ls
 tmux attach -t new_session
 tmux attach
 
+#------------------------------------------
 #Choose session
 <Ctrl + b> than enter "s"
 
+#Create one more window
+<Ctrl + b> than enter "c"
+
+#Split vertical
+<Ctrl + b> than enter """ [кавычки]
+
+#Split gorizontaly
+<Ctrl + b> than enter "%"
+
+#------------------------------------------
 #Kill the session
 tmux ls
 tmux kill-session -t new_session
