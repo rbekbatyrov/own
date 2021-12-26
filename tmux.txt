@@ -28,6 +28,13 @@ tmux attach
 <Ctrl + b> than enter "%"
 
 #------------------------------------------
+#Enter commands on all panes
+<Ctrl + b> than enter ":"
+setw synchronize-panes on
+
+*You can use <tab> to type less
+
+#------------------------------------------
 #Kill the session
 tmux ls
 tmux kill-session -t new_session
