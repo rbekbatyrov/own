@@ -38,4 +38,9 @@ tmux kill-server
 #------------------------------------------
 #tmux config file
 #location ~/.tmux.conf
+
+#you can use <Ctrl+z> instead <Ctrl+b>
+set-option -g prefix C-z
+
+#you can use mouse
 set -g mouse on
